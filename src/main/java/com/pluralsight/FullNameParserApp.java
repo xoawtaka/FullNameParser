@@ -18,11 +18,15 @@ public class FullNameParserApp {
         String lastName = names[names.length - 1];
 
         //taking in all middle names
-        //concatinating all middle names
+        //concatenating all middle names
+        //if no middle name: first name and last name
+        String middleNames = ""; {
+        if (names.length > 2) middleNames = String.join(" ", Arrays.copyOfRange(names, 1, names.length - 1));
+    }
 
+        // initialize middle names in numerical order
 
-        String middleNames = String.join(" ", Arrays.copyOfRange(names, 1, names.length - 2));
-
+        //last step: create return to 'fullnameparser' class specializing in parsing
 
         //separation of names without utilizing Case sense
         //utilizing regular expressions to delineate names via the white space in 'FullName' input
