@@ -11,7 +11,16 @@ public class FullNameParserApp {
         System.out.println("Please enter your full name (First, Middle, Last: )");
         String FullName = input.nextLine().trim();
 
-        String[] names = FullName.split("\\s+");
+        fullnameparsed(FullName);
+        /*
+        fullnameparsed("Lela Quyen Tran");
+
+         */
+    }
+
+    public static void fullnameparsed(String name) {
+
+        String[] names = name.split("\\s+");
 
         //declaring first and last name
         String firstName = names[0];
@@ -20,9 +29,11 @@ public class FullNameParserApp {
         //taking in all middle names
         //concatenating all middle names
         //if no middle name: first name and last name
-        String middleNames = ""; {
-        if (names.length > 2) middleNames = String.join(" ", Arrays.copyOfRange(names, 1, names.length - 1));
-    }
+        String middleNames = "";
+        {
+            if (names.length > 2) middleNames = String.join(" ",
+                    Arrays.copyOfRange(names, 1, names.length - 1));
+        }
 
         // initialize middle names in numerical order
 
@@ -44,15 +55,21 @@ public class FullNameParserApp {
      */
         //print each name
         System.out.println("First Name: " + firstName);
-        System.out.println("Middle Name: " + middleNames);
+        if (!middleNames.isEmpty()) {
+            for (int index = 1; index < names.length - 1; index++) {
+                System.out.println("Middle Name(s) " + (index) + ": " + names[index]);
+            }
+        }
         System.out.println("Last Name: " + lastName);
+    }
+}
 
-        input.close();
+
+
         /*
         fullNameParsed()
         */
-    }
-}
+
     /*
     //create method for name parsing
     public static fullNameParsed(String[] args) {
